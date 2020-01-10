@@ -21,6 +21,7 @@ static void fibonacci_calc (int count, mpz_t result, mpz_t prev)
  *  @params result reference to store the fibonacci value of count
  *  @return Status of the function will be returned 
  */
+#ifdef RECURSIVE
 int fib (int count, mpz_t result)
 {
     if (count < MIN_COUNT || count > MAX_COUNT)
@@ -33,4 +34,4 @@ int fib (int count, mpz_t result)
     fibonacci_calc (count, result, prev);
     return SUCESS;
 }
-
+#endif /*RECURSIVE*/
