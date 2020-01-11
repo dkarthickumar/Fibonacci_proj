@@ -4,6 +4,13 @@ project (fibonacci)
 include_directories(inc)
 link_directories(lib)
 
+option(RECURSIVE "Enabled recursive function" OFF)
+
+if(RECURSIVE)
+    add_definitions(-DRECURSIVE)
+endif()
+
+
 set(PROJECT_LIBS libgmp.a) 
 set(SOURCES src/fibonacci_main.c 
             src/fibonacci_recurcive.c

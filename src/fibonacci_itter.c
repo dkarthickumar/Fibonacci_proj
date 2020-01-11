@@ -4,6 +4,12 @@
 
 #include "fibonacci.h"
 
+/** Fibonacci lib function, initializes and itterates to find the 
+ *  fibonacci sequence of count value  
+ *  @params count a count value to specify number of itteration
+ *  @params result reference to store the fibonacci value of count
+ *  @return Status of the function will be returned 
+ */
 #ifndef RECURSIVE
 int fib (int count, mpz_t result)
 {
@@ -19,7 +25,6 @@ int fib (int count, mpz_t result)
     {	
 	mpz_add(result, result, prev);
 	mpz_swap( result, prev);
-        gmp_printf(" result : %Zd , prev : %Zd count:%d\n",result, prev, count); 
     }
     return SUCESS;
 }
